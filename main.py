@@ -222,10 +222,10 @@ def evaluate_predictions(predictions_df, encoder):
     print(f'R2 score for points: {point_r2}')
 
 def main():
-    image_path = "/Users/laerkeraaschou/Desktop/miniprojekt_2s/images/"
-    label_path = "/Users/laerkeraaschou/Desktop/miniprojekt_2s/labels.csv"
-    data_path = "/Users/laerkeraaschou/Desktop/miniprojekt_2s/full_data.csv"
-    template_path = "/Users/laerkeraaschou/Desktop/miniprojekt_2s/images/Crown_k.png"
+    image_path = "data/images/"
+    label_path = "data/labels.csv"
+    data_path = "data/full_data.csv"
+    template_path = "data/crown_template.png"
     img_range = range(1, 75)
     c_d = CrownDetector(template_path)
 
