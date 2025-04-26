@@ -84,16 +84,16 @@ All metrics are reported after the test phase.
 
 ## Folder Structure
 ```plaintext
-data/
-├── images/                 # Cropped board images
-├── crown_template.png      # Crown template
-├── labels.csv              # Tile labels
 miniprojekt_2s/
 ├── main.py                 # Main pipeline
 ├── preprocessing.py        # Image preprocessing
 ├── crown_class.py          # Crown detection class
 ├── visualizer.py           # Visualization tools
 ├── requirements.txt        # libraries required
+├── data/
+│   └── images/             # Cropped board images
+│   └── crown_template.png  # Crown template
+│   └── labels.csv              # Tile labels
 ```
 
 ---
