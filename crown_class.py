@@ -126,7 +126,7 @@ class CrownDetector:
         return all_results
     
     # Method to remove 'duplicate' matches
-    def dedupe_exact(self, matches):
+    def remove_duplicates(self, matches):
         seen = {}  # rect_key -> match
         for m in matches:
             # key = (x0, y0, x1, y1)
@@ -157,7 +157,7 @@ class CrownDetector:
         all_matches = self.find_all_crowns(modes, threshold=0.35)
 
         # Merge and suppress duplicates
-        final = self.dedupe_exact(all_matches)
+        final = self.remove_duplicates(all_matches)
 
         # Limit the output based on the terrain type
         if label in ('field', 'forest', 'lake'):
@@ -252,7 +252,7 @@ class CrownDetector:
             hsv_matches = [m for m in matches if m['mode'] == 'hsv']
             gray_matches = [m for m in matches if m['mode'] == 'gray']
             
-            final_matches = self.dedupe_exact(hsv_matches + gray_matches)
+            final_matches = self.remove_duplicates(hsv_matches + gray_matches)
             all_results.extend(final_matches)
         
         # Draw results on the board
